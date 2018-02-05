@@ -13,6 +13,8 @@ class XiDirectoryTreePanel: NSViewController {
 
     @IBOutlet var tableView: NSTableView!
     var datasource: [XiDirectoryTreeItem]?
+    var tree: XiDirectoryTree?
+    var selectedItems: [String: XiDirectoryTreeItem] = [String: XiDirectoryTreeItem]()
     
     class func instance() -> XiDirectoryTreePanel? {
         let storyboard = NSStoryboard.init(name: NSStoryboard.Name("Panels"), bundle: Bundle.main)
@@ -24,13 +26,24 @@ class XiDirectoryTreePanel: NSViewController {
         super.viewDidLoad()
     
         self.tableView.dataSource = self
+        self.tableView.delegate = self
         loadData()
     }
     
     func loadData() {
-        let tree = XiDirectoryTree.init(rootPath: "/Users/ocean/Documents/Projects/GitHub/xi-mac")
-        datasource = tree.flatItems(unfolderItems: [])
-        self.tableView.reloadData()
+        tree = XiDirectoryTree.init(rootPath: "/Users/ocean/Documents/Projects/GitHub/xi-mac")
+        if let tree = tree {
+            datasource = tree.flatItems(unfolderItems: [])
+            self.tableView.reloadData()
+        }
+    }
+    
+    func updateTree() {
+        let unfolderItems = self.selectedItems.values.map { $0 }
+        if let tree = tree {
+            datasource = tree.flatItems(unfolderItems: unfolderItems)
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -45,8 +58,26 @@ extension XiDirectoryTreePanel: NSTableViewDataSource {
 }
 
 extension XiDirectoryTreePanel: NSTableViewDelegate {
+
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
-        
+        if let selectedItem = self.datasource?[row] {
+            switch selectedItem.type {
+            case .directory:
+                if selectedItems[selectedItem.path] != nil {
+                    selectedItems.removeValue(forKey: selectedItem.path)
+                } else {
+                    selectedItems[selectedItem.path] = selectedItem
+                }
+            case .file(let filename):
+                if let fileUrl = URL.init(string: selectedItem.path) {
+                    (NSDocumentController.shared as! XiDocumentController).openDocument(withContentsOf: fileUrl, display: true, completionHandler: { (doc, result, error) in
+                    
+                    })
+                }
+            }
+            
+        }
+        updateTree()
         return true;
     }
 }
