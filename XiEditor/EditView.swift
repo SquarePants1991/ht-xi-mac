@@ -588,7 +588,7 @@ class EditView: NSView, NSTextInputClient, TextPlaneDelegate {
         // Note: drawing the gutter background after the text effectively clips the text. This
         // is a bit of a hack, and some optimization might be possible with real clipping
         // (especially if the gutter background is the same as the theme background).
-        renderer.drawSolidRect(x: 0, y: GLfloat(dirtyRect.origin.x), width: GLfloat(gutterWidth), height: GLfloat(dirtyRect.height), argb: colorToArgb(dataSource.theme.gutter))
+        renderer.drawSolidRect(x: 0, y: GLfloat(dirtyRect.origin.y), width: GLfloat(gutterWidth), height: GLfloat(dirtyRect.height), argb: colorToArgb(dataSource.theme.gutter))
         for lineIx in first..<last {
             let relLineIx = lineIx - first
             guard let line = lines[relLineIx] else {

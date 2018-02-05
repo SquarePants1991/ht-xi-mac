@@ -1,0 +1,6 @@
+framework module Pods_XiEditorUITests {
+  umbrella header "Pods-XiEditorUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

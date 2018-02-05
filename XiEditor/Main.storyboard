@@ -21,17 +21,36 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="K7o-qN-T9e" kind="relationship" relationship="window.shadowedContentViewController" id="ilK-wy-XDq"/>
+                        <segue destination="jUJ-Op-FpZ" kind="relationship" relationship="window.shadowedContentViewController" id="nFN-ZC-lNB"/>
                     </connections>
                 </windowController>
                 <customObject id="MN3-yk-KJt" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-250" y="-119"/>
         </scene>
+        <!--Xi Main View Controller-->
+        <scene sceneID="MyX-P0-rkb">
+            <objects>
+                <splitViewController id="jUJ-Op-FpZ" customClass="XiMainViewController" customModule="XiEditor" customModuleProvider="target" sceneMemberID="viewController">
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="u9C-7U-rwk">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="jUJ-Op-FpZ" id="hJR-Gs-r36"/>
+                        </connections>
+                    </splitView>
+                    <connections>
+                        <outlet property="splitView" destination="u9C-7U-rwk" id="9tF-fx-xu5"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="YC5-UJ-grQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-276" y="389"/>
+        </scene>
         <!--Edit View Controller-->
         <scene sceneID="LEm-46-qP4">
             <objects>
-                <viewController id="K7o-qN-T9e" customClass="EditViewController" customModule="XiEditor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditViewController" id="K7o-qN-T9e" customClass="EditViewController" customModule="XiEditor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="3ye-5b-Ab2">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,22 +78,22 @@
                                     </constraints>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="hEG-a6-BYd">
-                                    <rect key="frame" x="0.0" y="255" width="465" height="15"/>
+                                    <rect key="frame" x="0.0" y="255" width="365" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="O02-Lc-5gg">
-                                    <rect key="frame" x="465" y="0.0" width="15" height="255"/>
+                                    <rect key="frame" x="365" y="0.0" width="15" height="255"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="q1P-kd-995" secondAttribute="trailing" id="5IG-vx-2rb"/>
+                            <constraint firstItem="q1P-kd-995" firstAttribute="leading" secondItem="3ye-5b-Ab2" secondAttribute="leading" id="IwE-cz-CRb"/>
                             <constraint firstItem="Qwv-ci-fVA" firstAttribute="leading" secondItem="q1P-kd-995" secondAttribute="leading" id="Pyq-kX-0wa"/>
                             <constraint firstItem="Qwv-ci-fVA" firstAttribute="top" secondItem="q1P-kd-995" secondAttribute="top" id="Qwh-xz-kUZ"/>
                             <constraint firstItem="Qwv-ci-fVA" firstAttribute="bottom" secondItem="q1P-kd-995" secondAttribute="bottom" id="Sdy-8S-2NP"/>
                             <constraint firstItem="q1P-kd-995" firstAttribute="top" secondItem="3ye-5b-Ab2" secondAttribute="top" id="gHb-9s-5Ki"/>
-                            <constraint firstItem="q1P-kd-995" firstAttribute="leading" secondItem="3ye-5b-Ab2" secondAttribute="leading" id="kaS-IB-LV9"/>
                             <constraint firstAttribute="bottom" secondItem="q1P-kd-995" secondAttribute="bottom" id="ngA-1s-M67"/>
                             <constraint firstItem="Qwv-ci-fVA" firstAttribute="trailing" secondItem="q1P-kd-995" secondAttribute="trailing" id="w93-aW-WKu"/>
                         </constraints>
@@ -182,7 +201,7 @@ Gw
                                 <rect key="frame" x="8" y="0.0" width="464" height="38"/>
                                 <subviews>
                                     <searchField wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjF-1R-sp7" customClass="FindSearchField" customModule="XiEditor" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="8" width="365" height="22"/>
+                                        <rect key="frame" x="0.0" y="8" width="366" height="22"/>
                                         <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" focusRingType="none" bezelStyle="round" recentsAutosaveName="xi-editor-find" id="4a0-aC-Kre">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -198,7 +217,7 @@ Gw
                                         </connections>
                                     </searchField>
                                     <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="usm-aH-bgF">
-                                        <rect key="frame" x="372" y="9" width="41" height="20"/>
+                                        <rect key="frame" x="373" y="9" width="40" height="20"/>
                                         <segmentedCell key="cell" borderStyle="border" alignment="left" style="roundRect" trackingMode="momentary" id="53c-PL-hc5">
                                             <font key="font" metaFont="cellTitle"/>
                                             <segments>

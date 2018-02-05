@@ -95,7 +95,7 @@ class Document: NSDocument {
         }
         windowController.window?.setFrame(frameForNewWindow(), display: true)
 
-        self.editViewController = windowController.contentViewController as? EditViewController
+        self.editViewController = (windowController.contentViewController as? XiMainViewController)?.editorViewController
         editViewController?.document = self
         windowController.window?.delegate = editViewController
 
