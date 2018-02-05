@@ -85,15 +85,6 @@ class Document: NSDocument {
         let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
         windowController = storyboard.instantiateController(
             withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Document Window Controller")) as! NSWindowController
-        
-        if #available(OSX 10.12, *) {
-            windowController.window?.tabbingIdentifier = NSWindow.TabbingIdentifier(rawValue: tabbingIdentifier)
-            // preferredTabbingIdentifier is set when a new document is created with cmd-T. When this is the case, set the window's tabbingMode.
-            if Document.preferredTabbingIdentifier != nil {
-                windowController.window?.tabbingMode = .preferred
-            }
-        }
-        windowController.window?.setFrame(frameForNewWindow(), display: true)
 
         self.editViewController = (windowController.contentViewController as? XiMainViewController)?.editorViewController
         editViewController?.document = self
