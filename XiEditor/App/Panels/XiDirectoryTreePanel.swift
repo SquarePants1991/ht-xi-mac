@@ -32,7 +32,7 @@ class XiDirectoryTreePanel: NSViewController {
     }
     
     func loadFileTree() {
-        self.fileTree = XiDirectoryTree.init(rootPath: "/Users/ocean/Documents/Projects/GitHub/xi-mac/")
+        self.fileTree = XiDirectoryTree.init(rootPath: "/Users/yangwang/Documents/Projects/OnGit/xi-mac")
         updateTree()
     }
 

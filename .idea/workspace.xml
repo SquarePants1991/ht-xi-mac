@@ -4,10 +4,9 @@
     <list default="true" id="96f0374d-aed8-4b04-a71f-87f27ba88770" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xi-editor" afterPath="$PROJECT_DIR$/xi-editor" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/xcode.xml" afterPath="$PROJECT_DIR$/.idea/xcode.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/XiEditor/App/Panels/XiDirectoryTreePanel.swift" afterPath="$PROJECT_DIR$/XiEditor/App/Panels/XiDirectoryTreePanel.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/XiEditor/Document.swift" afterPath="$PROJECT_DIR$/XiEditor/Document.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/XiEditor/Main.storyboard" afterPath="$PROJECT_DIR$/XiEditor/Main.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/XiEditor/App/XiMainViewController.swift" afterPath="$PROJECT_DIR$/XiEditor/App/XiMainViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/XiEditor/EditViewController.swift" afterPath="$PROJECT_DIR$/XiEditor/EditViewController.swift" />
     </list>
     <ignored path="$USER_HOME$/Library/Developer/Xcode/DerivedData/XiEditor-ejipqdrsyqhlxighyfqiflblybxt/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,16 +19,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="macos_x86_64" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="build-rust-xcode.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build-rust-xcode.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AppDelegate.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/XiEditor/AppDelegate.swift">
           <provider selected="true" editor-type-id="text-editor">
@@ -43,28 +32,8 @@
       <file leaf-file-name="XiMainViewController.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/XiEditor/App/XiMainViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Document.swift" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/XiEditor/Document.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="83" column="48" lean-forward="false" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppKit.NSDocument.swift" pinned="false" current-in-tab="false">
-        <entry file="mock:///AppKit.NSDocument.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="821" column="14" lean-forward="false" selection-start-line="821" selection-start-column="14" selection-end-line="821" selection-end-column="14" />
+            <state relative-caret-position="151">
+              <caret line="40" column="48" lean-forward="false" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -73,28 +42,58 @@
       <file leaf-file-name="XiDirectoryTree.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/XiEditor/App/Panels/XiDirectoryTree.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
+            <state relative-caret-position="1660">
               <caret line="83" column="16" lean-forward="false" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XiDirectoryTreePanelCell.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/XiEditor/App/Panels/XiDirectoryTreePanelCell.swift">
+      <file leaf-file-name="EditViewController.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/XiEditor/EditViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-445">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="182">
+              <caret line="204" column="0" lean-forward="false" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XiDirectoryTreePanel.swift" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EditView.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/XiEditor/EditView.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2804">
+              <caret line="229" column="0" lean-forward="true" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextPlane.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/XiEditor/XiTextPlane/TextPlane.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="76" column="9" lean-forward="false" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Document.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/XiEditor/Document.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="96" column="9" lean-forward="false" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XiDirectoryTreePanel.swift" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/XiEditor/App/Panels/XiDirectoryTreePanel.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="69" column="20" lean-forward="false" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
+            <state relative-caret-position="375">
+              <caret line="34" column="103" lean-forward="false" selection-start-line="34" selection-start-column="103" selection-end-line="34" selection-end-column="103" />
               <folding />
             </state>
           </provider>
@@ -128,6 +127,12 @@
       <find>currentDocument</find>
       <find>did</find>
       <find>f</find>
+      <find>insert</find>
+      <find>become</find>
+      <find>editView</find>
+      <find>keydown</find>
+      <find>keydwn</find>
+      <find>NSTextInputClient</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -137,9 +142,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/XiEditor/XiDocumentController.swift" />
-        <option value="$PROJECT_DIR$/XiEditor/App/Panels/XiDirectoryTreePanel.swift" />
         <option value="$PROJECT_DIR$/XiEditor/AppDelegate.swift" />
+        <option value="$PROJECT_DIR$/XiEditor/EditView.swift" />
         <option value="$PROJECT_DIR$/XiEditor/Document.swift" />
+        <option value="$PROJECT_DIR$/XiEditor/EditViewController.swift" />
+        <option value="$PROJECT_DIR$/XiEditor/App/XiMainViewController.swift" />
+        <option value="$PROJECT_DIR$/XiEditor/App/Panels/XiDirectoryTreePanel.swift" />
       </list>
     </option>
   </component>
@@ -239,30 +247,30 @@
       <option name="presentableId" value="Default" />
       <updated>1517814904644</updated>
       <workItem from="1517814906918" duration="576000" />
-      <workItem from="1517835735111" duration="6729000" />
+      <workItem from="1517835735111" duration="12018000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7305000" />
+    <option name="totallyTimeSpent" value="12594000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="23" width="1436" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.44707522" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3552795" sideWeight="0.38579386" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32919255" sideWeight="0.15877438" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2720497" sideWeight="0.3481894" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32919255" sideWeight="0.8412256" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.82033426" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.4972145" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15668523" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22284123" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.704039" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2720497" sideWeight="0.6518106" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -293,12 +301,12 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/XiEditor/Document.swift</url>
-          <line>83</line>
-          <option name="timeStamp" value="17" />
+          <url>file://$PROJECT_DIR$/XiEditor/EditView.swift</url>
+          <line>212</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="18" />
+      <option name="time" value="36" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -327,14 +335,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/XiEditor/App/Panels/XiDirectoryTree.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="83" column="16" lean-forward="false" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/XiEditor/App/Panels/XiDirectoryTreePanelCell.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-445">
@@ -359,14 +359,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/XiEditor/App/Panels/XiDirectoryTreePanel.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="69" column="20" lean-forward="false" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/XiEditor/AppDelegate.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="654">
@@ -375,18 +367,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/XiEditor/App/XiMainViewController.swift">
+    <entry file="file://$PROJECT_DIR$/XiEditor/XiTextPlane/TextPlane.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="187">
+          <caret line="76" column="9" lean-forward="false" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/XiEditor/Document.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="83" column="48" lean-forward="false" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="48" />
+        <state relative-caret-position="293">
+          <caret line="96" column="9" lean-forward="false" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XiEditor/EditViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="204" column="0" lean-forward="false" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XiEditor/EditView.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2804">
+          <caret line="229" column="0" lean-forward="true" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XiEditor/App/XiMainViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="40" column="48" lean-forward="false" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XiEditor/App/Panels/XiDirectoryTree.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1660">
+          <caret line="83" column="16" lean-forward="false" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XiEditor/App/Panels/XiDirectoryTreePanel.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="34" column="103" lean-forward="false" selection-start-line="34" selection-start-column="103" selection-end-line="34" selection-end-column="103" />
           <folding />
         </state>
       </provider>
