@@ -11,6 +11,7 @@ import Cocoa
 class XiMainViewController: NSSplitViewController {
 
     var editorViewController: EditViewController!
+    var editorViewContainer: NSTabViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +25,17 @@ class XiMainViewController: NSSplitViewController {
         }
         
         // Create Editor VC
-        let storyboard = NSStoryboard.init(name: NSStoryboard.Name.init("Main"), bundle: Bundle.main)
-        let editorVC = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier.init("EditViewController")) as! EditViewController
-        self.addSplitViewItem(NSSplitViewItem.init(viewController: editorVC))
-        self.editorViewController = editorVC
+        self.editorViewContainer = NSTabViewController.init()
+        self.addSplitViewItem(NSSplitViewItem.init(viewController: self.editorViewContainer))
         
         self.splitView.setPosition(180, ofDividerAt: 0)
+    }
+    
+    func addEditViewController(editVC: EditViewController) {
+//        let storyboard = NSStoryboard.init(name: NSStoryboard.Name.init("Main"), bundle: Bundle.main)
+//        let editorVC1 = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier.init("EditViewController")) as! EditViewController
+//        self.editorViewController = editorVC1
+        self.editorViewContainer.addTabViewItem(NSTabViewItem.init(viewController: editVC))
+        self.editorViewContainer.selectedTabViewItemIndex = self.editorViewContainer.tabViewItems.count - 1
     }
 }

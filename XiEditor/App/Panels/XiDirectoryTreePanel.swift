@@ -68,12 +68,12 @@ extension XiDirectoryTreePanel: NSTableViewDelegate {
                 } else {
                     selectedItems[selectedItem.path] = selectedItem
                 }
-            case .file(let filename):
-                if let fileUrl = URL.init(string: selectedItem.path) {
-                    (NSDocumentController.shared as! XiDocumentController).openDocument(withContentsOf: fileUrl, display: true, completionHandler: { (doc, result, error) in
+            case .file(let _):
+                let fileUrl = URL.init(fileURLWithPath: selectedItem.path)
+                (NSDocumentController.shared as! XiDocumentController).openDocument(withContentsOf: fileUrl, display: true, completionHandler: { (doc, result, error) in
                     
-                    })
-                }
+                })
+            
             }
             
         }

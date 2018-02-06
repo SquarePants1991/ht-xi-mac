@@ -79,26 +79,23 @@ class Document: NSDocument {
         // I'm not 100% sure this is necessary but it can't _hurt_
         self.hasUndoManager = false
     }
+    
+    static var baseWindowController: NSWindowController?
  
     override func makeWindowControllers() {
-        var windowController: NSWindowController!
-        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
-        windowController = storyboard.instantiateController(
-            withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Document Window Controller")) as! NSWindowController
-        
-        if #available(OSX 10.12, *) {
-            windowController.window?.tabbingIdentifier = NSWindow.TabbingIdentifier(rawValue: tabbingIdentifier)
-            // preferredTabbingIdentifier is set when a new document is created with cmd-T. When this is the case, set the window's tabbingMode.
-            if Document.preferredTabbingIdentifier != nil {
-                windowController.window?.tabbingMode = .preferred
-            }
+        if Document.baseWindowController == nil {
+            let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+            Document.baseWindowController = storyboard.instantiateController(
+                withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Document Window Controller")) as? NSWindowController
+            Document.baseWindowController?.window?.makeKeyAndOrderFront(self)
         }
-        windowController.window?.setFrame(frameForNewWindow(), display: true)
-
-        self.editViewController = (windowController.contentViewController as? XiMainViewController)?.editorViewController
-        editViewController?.document = self
-        windowController.window?.delegate = editViewController
-
+        let storyboard = NSStoryboard.init(name: NSStoryboard.Name.init("Main"), bundle: Bundle.main)
+        self.editViewController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier.init("EditViewController")) as? EditViewController
+        if let mainVC = Document.baseWindowController?.contentViewController as? XiMainViewController, let editViewController = self.editViewController {
+            mainVC.addEditViewController(editVC: editViewController)
+            editViewController.document = self
+        }
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(Document.windowChangedNotification(_:)),
@@ -108,8 +105,6 @@ class Document: NSDocument {
             self,
             selector: #selector(Document.windowChangedNotification(_:)),
             name: NSWindow.didResizeNotification, object: nil)
-
-        self.addWindowController(windowController)
     }
 
     override func save(to url: URL, ofType typeName: String, for saveOperation: NSDocument.SaveOperationType, completionHandler: @escaping (Error?) -> Void) {
