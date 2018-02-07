@@ -18,6 +18,7 @@
 		6B90DD221F14110B00DF3CE2 /* UserInputPromptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B90DD211F14110B00DF3CE2 /* UserInputPromptController.swift */; };
 		6BA1873B1FDDD7B6008220DA /* XiClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1873A1FDDD7B6008220DA /* XiClipView.swift */; };
 		6BF9575B1FD70C420010BAE6 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF9575A1FD70C420010BAE6 /* Client.swift */; };
+		8E00F1ED202AD31400650585 /* XiSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E00F1EC202AD31400650585 /* XiSplitView.swift */; };
 		8EFA6D7B20283FE3009789EB /* XiDirectoryTreePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA6D7A20283FE3009789EB /* XiDirectoryTreePanel.swift */; };
 		8EFA6D7D20284367009789EB /* XiMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA6D7C20284367009789EB /* XiMainViewController.swift */; };
 		8EFA6D8120284684009789EB /* Panels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFA6D8020284684009789EB /* Panels.storyboard */; };
@@ -90,6 +91,7 @@
 		6BA1873A1FDDD7B6008220DA /* XiClipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XiClipView.swift; sourceTree = "<group>"; };
 		6BF9575A1FD70C420010BAE6 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		727DB4F7B4732994B9D108DC /* Pods_XiEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XiEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E00F1EC202AD31400650585 /* XiSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XiSplitView.swift; sourceTree = "<group>"; };
 		8EFA6D7A20283FE3009789EB /* XiDirectoryTreePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XiDirectoryTreePanel.swift; sourceTree = "<group>"; };
 		8EFA6D7C20284367009789EB /* XiMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XiMainViewController.swift; sourceTree = "<group>"; };
 		8EFA6D8020284684009789EB /* Panels.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Panels.storyboard; sourceTree = "<group>"; };
@@ -171,13 +173,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8EFA6D7920283FAC009789EB /* Panels */ = {
+		8E00F1EB202A9FF100650585 /* File Tree Panel */ = {
 			isa = PBXGroup;
 			children = (
 				8EFA6D7A20283FE3009789EB /* XiDirectoryTreePanel.swift */,
-				8EFA6D8020284684009789EB /* Panels.storyboard */,
 				8EFA6D832028525E009789EB /* XiDirectoryTreePanelCell.swift */,
 				8EFA6D8520285556009789EB /* XiDirectoryTree.swift */,
+				8E00F1EC202AD31400650585 /* XiSplitView.swift */,
+			);
+			path = "File Tree Panel";
+			sourceTree = "<group>";
+		};
+		8EFA6D7920283FAC009789EB /* Panels */ = {
+			isa = PBXGroup;
+			children = (
+				8E00F1EB202A9FF100650585 /* File Tree Panel */,
+				8EFA6D8020284684009789EB /* Panels.storyboard */,
 			);
 			path = Panels;
 			sourceTree = "<group>";
@@ -624,6 +635,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E00F1ED202AD31400650585 /* XiSplitView.swift in Sources */,
 				8EFA6D8620285556009789EB /* XiDirectoryTree.swift in Sources */,
 				F53EA2AF1DCAAA170071ACFD /* EditViewController.swift in Sources */,
 				8EFA6D842028525E009789EB /* XiDirectoryTreePanelCell.swift in Sources */,

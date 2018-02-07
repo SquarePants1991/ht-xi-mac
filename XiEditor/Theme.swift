@@ -84,7 +84,7 @@ extension Theme {
 
         let find_highlight = NSColor(jsonRgbaColor: dict["find_highlight"] as? [String: AnyObject] ?? [:])
         let find_highlight_foreground = NSColor(jsonRgbaColor: dict["find_highlight_foreground"] as? [String: AnyObject] ?? [:])
-        let gutter = NSColor(jsonRgbaColor: dict["gutter"] as? [String: AnyObject] ?? [:])
+        let gutter = NSColor(jsonRgbaColor: dict["background"] as? [String: AnyObject] ?? [:])
         let gutter_foreground = NSColor(jsonRgbaColor: dict["gutter_foreground"] as? [String: AnyObject] ?? [:])
 
         let selection = NSColor(jsonRgbaColor: dict["selection"] as? [String: AnyObject] ?? [:])

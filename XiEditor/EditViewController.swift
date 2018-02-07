@@ -506,10 +506,8 @@ class EditViewController: NSViewController, EditViewDataSource, FindDelegate, Sc
 //TODO: will have to think about whether this will work with splits
 extension EditViewController: NSWindowDelegate {
     func windowDidBecomeKey(_ notification: Notification) {
-        editView.becomeFirstResponder()
-        if editView.isFirstResponder {
-            editView.isFrontmostView = true
-        }
+        Document.baseWindowController?.window?.makeFirstResponder(self)
+        editView.isFrontmostView = true
         updatePluginMenu()
     }
 

@@ -88,6 +88,7 @@ class Document: NSDocument {
             Document.baseWindowController = storyboard.instantiateController(
                 withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Document Window Controller")) as? NSWindowController
             Document.baseWindowController?.window?.makeKeyAndOrderFront(self)
+            Document.baseWindowController?.window?.appearance = NSAppearance(named:NSAppearance.Name.vibrantDark)
         }
         let storyboard = NSStoryboard.init(name: NSStoryboard.Name.init("Main"), bundle: Bundle.main)
         self.editViewController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier.init("EditViewController")) as? EditViewController

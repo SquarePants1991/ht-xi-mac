@@ -132,6 +132,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, XiClient {
                 guard let doc = doc as? Document else { continue }
                 doc.editViewController?.themeChanged(name)
             }
+            NotificationCenter.default.post(name: NSNotification.Name("kThemeChanged"), object: theme)
         }
     }
 

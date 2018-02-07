@@ -16,6 +16,9 @@ class XiMainViewController: NSSplitViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(themeChanged(notification:)), name: NSNotification.Name("kThemeChanged"), object: nil)
+        
         self.splitView.delegate = self
         // Create Document Tree Panel
         if let documentTreePanelVC = XiDirectoryTreePanel.instance() {
@@ -27,6 +30,8 @@ class XiMainViewController: NSSplitViewController {
         
         // Create Editor VC Container
         self.editorViewContainer = NSTabViewController()
+        self.editorViewContainer.tabStyle = .unspecified
+        self.editorViewContainer.transitionOptions = .slideDown
         self.editorViewContainer.addObserver(self, forKeyPath: "selectedTabViewItemIndex", options: [NSKeyValueObservingOptions.new, NSKeyValueObservingOptions.old], context: nil)
         self.addSplitViewItem(NSSplitViewItem.init(viewController: self.editorViewContainer))
         
@@ -36,13 +41,6 @@ class XiMainViewController: NSSplitViewController {
     func addEditViewController(editVC: EditViewController) {
         self.editorViewContainer.addTabViewItem(NSTabViewItem.init(viewController: editVC))
         self.editorViewContainer.selectedTabViewItemIndex = self.editorViewContainer.tabViewItems.count - 1
-    }
-
-    override func keyDown(with event: NSEvent) {
-        let tabItem: NSTabViewItem = self.editorViewContainer.tabViewItems[self.editorViewContainer.selectedTabViewItemIndex]
-        if let newEditVC: EditViewController = tabItem.viewController as? EditViewController {
-            newEditVC.keyDown(with: event)
-        }
     }
 
     @objc
@@ -62,6 +60,21 @@ class XiMainViewController: NSSplitViewController {
             }
         }
     }
-
-
+    
+    override func splitView(_ splitView: NSSplitView, shouldHideDividerAt dividerIndex: Int) -> Bool {
+        return true
+    }
+    
+    func setupAppearance(theme: Theme) {
+        if let splitView = self.splitView as? XiSplitView {
+            splitView.overrideDividerColor = theme.background
+        }
+    }
+    
+    @objc
+    func themeChanged(notification: Notification) {
+        if let theme = notification.object as? Theme {
+            setupAppearance(theme: theme)
+        }
+    }
 }
