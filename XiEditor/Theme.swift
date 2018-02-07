@@ -60,7 +60,7 @@ struct Theme {
 extension Theme {
     static func defaultTheme() -> Theme {
         return Theme(foreground: NSColor.black,
-              background: NSColor.white,
+              background: NSColor.init(white: 0.13, alpha: 1.0),
               caret: NSColor.black,
               lineHighlight: nil,
               findHighlight: NSColor(deviceWhite: 0.8, alpha: 0.4),
