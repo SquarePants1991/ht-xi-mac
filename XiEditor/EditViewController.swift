@@ -271,6 +271,18 @@ class EditViewController: NSViewController, EditViewDataSource, FindDelegate, Sc
         NSDocumentController.shared.newDocument(sender)
     }
     
+    @objc func saveDocument(_ sender: NSMenuItem?) {
+        self.document.save(withDelegate: nil, didSave: nil, contextInfo: nil)
+    }
+    
+    @objc func saveDocumentAs(_ sender: NSMenuItem?) {
+        self.document.saveAs(sender)
+    }
+    
+    @objc func revertToSaved(_ sender: NSMenuItem?) {
+        self.document.revertToSaved(sender)
+    }
+    
     // disable the New Tab menu item when running in 10.12
     override func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
         if menuItem.tag == 10 {
