@@ -89,13 +89,18 @@ class Document: NSDocument {
                 withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Document Window Controller")) as? NSWindowController
             Document.baseWindowController?.window?.makeKeyAndOrderFront(self)
             Document.baseWindowController?.window?.appearance = NSAppearance(named:NSAppearance.Name.vibrantDark)
+            if let mainVC = Document.baseWindowController?.contentViewController as? XiMainViewController {
+                mainVC.parentWindow = Document.baseWindowController?.window
+            }
+            Document.baseWindowController?.window?.delegate = self
         }
         let storyboard = NSStoryboard.init(name: NSStoryboard.Name.init("Main"), bundle: Bundle.main)
         self.editViewController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier.init("EditViewController")) as? EditViewController
         if let mainVC = Document.baseWindowController?.contentViewController as? XiMainViewController, let editViewController = self.editViewController {
-            mainVC.addEditViewController(editVC: editViewController)
             editViewController.document = self
+            mainVC.addEditViewController(editVC: editViewController)
         }
+        self.editViewController?.availableThemesChanged(XiThemeManager.shared.themes ?? [])
         
         NotificationCenter.default.addObserver(
             self,
@@ -217,5 +222,13 @@ class Document: NSDocument {
             let frameString = NSStringFromRect(window.frame)
             UserDefaults.standard.setValue(frameString, forKey: USER_DEFAULTS_NEW_WINDOW_FRAME)
         }
+    }
+}
+
+
+extension Document: NSWindowDelegate {
+    func windowShouldClose(_ sender: NSWindow) -> Bool {
+        Document.baseWindowController = nil
+        return true
     }
 }

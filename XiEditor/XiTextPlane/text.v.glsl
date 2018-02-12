@@ -33,6 +33,7 @@ uniform vec2 posScale;
 flat out vec4 passColor;
 out vec2 uv;
 
+
 void main() {
     vec2 pixelPos = rectOrigin + position * rectSize;
     vec2 pos = pixelPos * posScale + vec2(-1.0, 1.0);

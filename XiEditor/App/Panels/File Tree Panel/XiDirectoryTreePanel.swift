@@ -33,12 +33,15 @@ class XiDirectoryTreePanel: NSViewController {
         
         self.tableView.target = self
         self.tableView.action = #selector(tableViewCellClicked(sender:))
-        
+
+        if let currentTheme = XiThemeManager.shared.currentTheme {
+            self.setupAppearance(theme: currentTheme)
+        }
         loadFileTree()
     }
     
     func loadFileTree() {
-        self.fileTree = XiDirectoryTree.init(rootPath: "/Users/ocean/Documents/Projects/GitHub/xi-mac/XiEditor")
+        self.fileTree = XiDirectoryTree.init(rootPath: "/Users/ocean/Documents/Projects/KidKnowledge")
         updateTree()
     }
     
@@ -54,13 +57,14 @@ class XiDirectoryTreePanel: NSViewController {
     
     func setupAppearance(theme: Theme) {
         self.theme = theme
-        self.tableView.backgroundColor = theme.background
+        let darkerBg = NSColor.init(deviceHue: theme.background.hueComponent, saturation: theme.background.saturationComponent, brightness: theme.background.brightnessComponent + 0.1, alpha: 1.0)
+        self.tableView.backgroundColor = darkerBg
         XiDirectoryTreePanelCell.textColor = theme.foreground
         XiDirectoryTreePanelCell.selectionColor = theme.selection
         XiDirectoryTreePanelCell.iconConfig = [
-            kIconKeyDir: ("\u{e2c8}", NSColor.white),
-            kIconKeyFileDefault: ("\u{e24d}", NSColor.lightGray),
-            "swift": ("\u{e86f}", NSColor.orange),
+            kIconKeyDir: ("\u{e2c8}", theme.foreground),
+            kIconKeyFileDefault: ("\u{e24d}", theme.foreground),
+            "swift": ("\u{e86f}", theme.foreground),
         ]
         self.tableView.reloadData()
     }
@@ -86,6 +90,7 @@ extension XiDirectoryTreePanel: NSTableViewDataSource {
 extension XiDirectoryTreePanel: NSTableViewDelegate {
     @objc
     func tableViewCellClicked(sender: Any?) {
+        print("clicked");
         let row = tableView.clickedRow
         if let datasource = self.datasource, row >= 0 && row <= datasource.count - 1 {
             let item = datasource[row]
@@ -96,14 +101,14 @@ extension XiDirectoryTreePanel: NSTableViewDelegate {
                 } else {
                     selectedItems[item.path] = item
                 }
+                updateTree()
             case .file:
                 let url = URL.init(fileURLWithPath: item.path)
                 (NSDocumentController.shared as! XiDocumentController).openDocument(withContentsOf: url, display: true) { document, b, error in
-                    
+
                 }
             }
         }
-        updateTree()
     }
     
     func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {

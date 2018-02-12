@@ -120,11 +120,14 @@ class EditViewController: NSViewController, EditViewDataSource, FindDelegate, Sc
         (scrollView.contentView as? XiClipView)?.delegate = self
     }
 
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        redrawEverything()
+    }
+
     override func viewDidAppear() {
         super.viewDidAppear()
         NotificationCenter.default.addObserver(self, selector: #selector(EditViewController.frameDidChangeNotification(_:)), name: NSView.frameDidChangeNotification, object: scrollView)
-        // call to set initial scroll position once we know view size
-        redrawEverything()
     }
 
     func updateGutterWidth() {
@@ -279,8 +282,12 @@ class EditViewController: NSViewController, EditViewDataSource, FindDelegate, Sc
         self.document.saveAs(sender)
     }
     
-    @objc func revertToSaved(_ sender: NSMenuItem?) {
+    @objc func revertDocumentToSaved(_ sender: NSMenuItem?) {
         self.document.revertToSaved(sender)
+    }
+    
+    @objc func runPageLayout(_ sender: NSMenuItem?) {
+        self.document.runPageLayout(sender)
     }
     
     // disable the New Tab menu item when running in 10.12

@@ -129,7 +129,7 @@ class EditView: NSView, NSTextInputClient, TextPlaneDelegate {
         }
     }
     var lastRevisionRendered = 0
-    var gutterXPad: CGFloat = 8
+    var gutterXPad: CGFloat = 15
     var gutterWidth: CGFloat = 0
     var gutterCache: GutterCache?
 
@@ -465,6 +465,9 @@ class EditView: NSView, NSTextInputClient, TextPlaneDelegate {
 
     // Rendering using TextPlane
     func render(_ renderer: Renderer, dirtyRect: NSRect) {
+        if gutterWidth == 0 {
+            return
+        }
         Trace.shared.trace("EditView render", .main, .begin)
         renderer.clear(dataSource.theme.background)
         if dataSource.document.coreViewIdentifier == nil {
@@ -588,7 +591,8 @@ class EditView: NSView, NSTextInputClient, TextPlaneDelegate {
         // Note: drawing the gutter background after the text effectively clips the text. This
         // is a bit of a hack, and some optimization might be possible with real clipping
         // (especially if the gutter background is the same as the theme background).
-        renderer.drawSolidRect(x: 0, y: GLfloat(dirtyRect.origin.y), width: GLfloat(gutterWidth), height: GLfloat(dirtyRect.height), argb: colorToArgb(dataSource.theme.gutter))
+        // 我想保持gutter和编辑区域颜色一样，所以注释了这段代码
+        // renderer.drawSolidRect(x: 0, y: GLfloat(dirtyRect.origin.y), width: GLfloat(gutterWidth), height: GLfloat(dirtyRect.height), argb: colorToArgb(dataSource.theme.gutterForeground))
         for lineIx in first..<last {
             let relLineIx = lineIx - first
             guard let line = lines[relLineIx] else {

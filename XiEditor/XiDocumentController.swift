@@ -52,27 +52,32 @@ class XiDocumentController: NSDocumentController {
     override func openDocument(withContentsOf url: URL,
                                display displayDocument: Bool,
                                completionHandler: @escaping (NSDocument?, Bool, Error?) -> Void) {
-        // reuse empty view if foremost
-        if let currentDocument = self.currentDocument as? Document, currentDocument.isEmpty,
-            self.document(for: url) == nil {
-            // close the existing view before reusing
-            if let oldId = currentDocument.coreViewIdentifier {
-                Events.CloseView(viewIdentifier: oldId).dispatch(currentDocument.dispatcher!)
-            }
-
-            Events.NewView(path: url.path).dispatchWithCallback(currentDocument.dispatcher!) { (response) in
-                DispatchQueue.main.sync {
-                    currentDocument.coreViewIdentifier = response
-                    currentDocument.editViewController?.visibleLines = 0..<0
-                    currentDocument.fileURL = url
-                    self.setIdentifier(response, forDocument: currentDocument)
-                    completionHandler(currentDocument, false, nil)
-                }
+//        // reuse empty view if foremost
+//        if let currentDocument = self.currentDocument as? Document, currentDocument.isEmpty,
+//            self.document(for: url) == nil {
+//            // close the existing view before reusing
+//            if let oldId = currentDocument.coreViewIdentifier {
+//                Events.CloseView(viewIdentifier: oldId).dispatch(currentDocument.dispatcher!)
+//            }
+//
+//            Events.NewView(path: url.path).dispatchWithCallback(currentDocument.dispatcher!) { (response) in
+//                DispatchQueue.main.sync {
+//                    currentDocument.coreViewIdentifier = response
+//                    currentDocument.editViewController?.visibleLines = 0..<0
+//                    currentDocument.fileURL = url
+//                    self.setIdentifier(response, forDocument: currentDocument)
+//                    completionHandler(currentDocument, false, nil)
+//                }
+//            }
+//        } else {
+//            super.openDocument(withContentsOf: url, display: displayDocument, completionHandler: completionHandler)
+//        }
+        if let document = self.document(for: url) as? Document {
+            if let mainVC = Document.baseWindowController?.contentViewController as? XiMainViewController, let editViewController = document.editViewController {
+                mainVC.activeEditViewController(editVC: editViewController)
             }
         } else {
-            super.openDocument(withContentsOf: url,
-                               display: displayDocument,
-                               completionHandler: completionHandler)
+            super.openDocument(withContentsOf: url, display: displayDocument, completionHandler: completionHandler)
         }
     }
 

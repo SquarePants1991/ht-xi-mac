@@ -133,10 +133,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, XiClient {
                 doc.editViewController?.themeChanged(name)
             }
             NotificationCenter.default.post(name: NSNotification.Name("kThemeChanged"), object: theme)
+            XiThemeManager.shared.currentTheme = theme
         }
     }
 
     func availableThemes(themes: [String]) {
+        XiThemeManager.shared.themes = themes
         DispatchQueue.main.async {
             for doc in NSApplication.shared.orderedDocuments {
                 guard let doc = doc as? Document else { continue }

@@ -11,8 +11,8 @@ import Cocoa
 @objc
 class XiMainViewController: NSSplitViewController {
 
-    var editorViewController: EditViewController!
     var editorViewContainer: NSTabViewController!
+    var parentWindow: NSWindow?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +41,19 @@ class XiMainViewController: NSSplitViewController {
     func addEditViewController(editVC: EditViewController) {
         self.editorViewContainer.addTabViewItem(NSTabViewItem.init(viewController: editVC))
         self.editorViewContainer.selectedTabViewItemIndex = self.editorViewContainer.tabViewItems.count - 1
+        self.parentWindow?.title = editVC.document.displayName
+    }
+    
+    func activeEditViewController(editVC: EditViewController) {
+        var index = 0
+        for tabItem in self.editorViewContainer.tabViewItems {
+            if tabItem.viewController == editVC {
+                self.editorViewContainer.selectedTabViewItemIndex = index
+                self.parentWindow?.title = editVC.document.displayName
+                return
+            }
+            index += 1
+        }
     }
 
     @objc
@@ -68,6 +81,7 @@ class XiMainViewController: NSSplitViewController {
     func setupAppearance(theme: Theme) {
         if let splitView = self.splitView as? XiSplitView {
             splitView.overrideDividerColor = theme.background
+            splitView.setNeedsDisplay(splitView.bounds)
         }
     }
     
